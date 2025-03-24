@@ -57,6 +57,7 @@ cd opencv-4.11.0/build_debug
 ```
 ```
 cmake .. \
+	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Debug \
 	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
 	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv_debug/ \
@@ -80,13 +81,14 @@ cmake .. \
 	-DENABLE_FAST_MATH=ON 
 ```
 ```
-make -j$(nproc)
-sudo make install -j$(nproc)
+ninja
+sudo ninja install
 ```
 ## release
 ```
 cd ../build_ralease
 cmake .. \
+	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
 	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv_release/ \
@@ -108,6 +110,10 @@ cmake .. \
 	-DOPENCV_ENABLE_NONFREE=ON \
 	-DWITH_GTK_2_X=ON \
 	-DENABLE_FAST_MATH=ON 
+```
+```
+ninja
+sudo ninja install
 ```
 # 验证 Debug/Release
 ```
