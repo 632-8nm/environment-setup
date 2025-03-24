@@ -92,7 +92,7 @@ cmake .. \
 ```
 ```
 make -j$(nproc)
-sudo make install 
+sudo make install -j$(nproc)
 ```
 ## release
 ```
