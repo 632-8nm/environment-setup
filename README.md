@@ -5,18 +5,13 @@ sudo apt update && sudo apt install cmake
 # opencv 
 ```
 mkdir -p opencv
+cd opencv
 ```
 ```
-if [ ! -f "opencv-4.11.0.tar.gz" ]; then
-    wget -O opencv-4.11.0.tar.gz https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
-else
-    echo "文件 opencv-4.11.0.tar.gz 已存在，跳过下载。"
-fi
-if [ ! -f "opencv_contrib-4.11.0.tar.gz" ]; then
-    wget -O opencv_contrib-4.11.0.tar.gz https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz
-else
-    echo "文件 opencv_contrib-4.11.0.tar.gz 已存在，跳过下载。"
-fi
+wget -O opencv-4.11.0.tar.gz https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
+wget -O opencv_contrib-4.11.0.tar.gz https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz
+```
+```
 tar -zxf opencv-4.11.0.tar.gz
 tar -zxf opencv_contrib-4.11.0.tar.gz
 ```
