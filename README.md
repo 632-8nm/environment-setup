@@ -117,7 +117,7 @@ sudo ninja install
 ```
 # 验证 Debug/Release
 ```
-file /usr/local/opencv_debug/lib/libopencv_core.so.4.10.0
-file /usr/local/opencv_release/lib/libopencv_core.so.4.10.0
+file /usr/local/opencv_debug/lib/libopencv_core.so.4.11.0
+file /usr/local/opencv_release/lib/libopencv_core.so.4.11.0
 ```
 
