@@ -5,6 +5,9 @@ sudo apt update && sudo apt install cmake
 ```
 # opencv 
 ```
+mkdir -p opencv
+```
+```
 if [ ! -f "opencv-4.11.0.tar.gz" ]; then
     wget https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
 else
@@ -63,6 +66,8 @@ source ~/.bashrc
 ```
 mkdir -p opencv-4.11.0/build_debug opencv-4.11.0/build_release
 cd opencv-4.11.0/build_debug
+```
+```
 cmake .. \
 	-DCMAKE_BUILD_TYPE=Debug \
 	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
@@ -86,7 +91,9 @@ cmake .. \
 	-DWITH_GTK_2_X=ON \
 	-DENABLE_FAST_MATH=ON 
 ```
-
+```
+make -j7
+```
 ## release
 ```
 cd ../build_ralease
