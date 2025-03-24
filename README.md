@@ -9,12 +9,12 @@ mkdir -p opencv
 ```
 ```
 if [ ! -f "opencv-4.11.0.tar.gz" ]; then
-    wget https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
+    wget -O opencv-4.11.0.tar.gz https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
 else
     echo "文件 opencv-4.11.0.tar.gz 已存在，跳过下载。"
 fi
 if [ ! -f "opencv_contrib-4.11.0.tar.gz" ]; then
-    wget https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz
+    wget -O opencv_contrib-4.11.0.tar.gz https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz
 else
     echo "文件 opencv_contrib-4.11.0.tar.gz 已存在，跳过下载。"
 fi
