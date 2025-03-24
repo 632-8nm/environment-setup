@@ -4,6 +4,7 @@
 sudo apt update && sudo apt install cmake
 ```
 # opencv 
+```
 if [ ! -f "opencv-4.11.0.tar.gz" ]; then
     wget https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
 else
@@ -16,9 +17,10 @@ else
 fi
 tar -zxf opencv-4.11.0.tar.gz
 tar -zxf opencv_contrib-4.11.0.tar.gz
-
+```
 
 # cuda
+```
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
 sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
 if [ ! -f "cuda-repo-wsl-ubuntu-12-8-local_12.8.1-1_amd64.deb" ]; then
@@ -30,8 +32,9 @@ sudo dpkg -i cuda-repo-wsl-ubuntu-12-8-local_12.8.1-1_amd64.deb
 sudo cp /var/cuda-repo-wsl-ubuntu-12-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-8
-
+```
 # cudnn
+```
 if [ ! -f "cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb" ]; then
     wget https://developer.download.nvidia.com/compute/cudnn/9.8.0/local_installers/cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb
 else
@@ -41,11 +44,19 @@ sudo dpkg -i cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb
 sudo cp /var/cudnn-local-repo-ubuntu2404-9.8.0/cudnn-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
 sudo apt-get -y install cudnn-cuda-12
-# CUDA 环境变量配置
-# export CUDA_HOME="/usr/local/cuda-12.8"
-# export CuDNN_HOME="/usr/local/cuda-12.8/include"
-# export PATH="/usr/local/cuda-12.8/bin:$PATH"
-# export LD_LIBRARY_PATH="/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH"
+```
+```
+sudo nano ~/.bashrc
+```
+```
+export CUDA_HOME="/usr/local/cuda-12.8"
+export CuDNN_HOME="/usr/local/cuda-12.8/include"
+export PATH="/usr/local/cuda-12.8/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH"
+```
+```
+source ~/.bashrc
+```
 
 # install 
 mkdir -p opencv-4.11.0/build_debug opencv-4.11.0/build_release
