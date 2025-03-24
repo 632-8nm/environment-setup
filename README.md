@@ -1,4 +1,3 @@
-# cmd
 # cmake
 ```
 sudo apt update && sudo apt install cmake
@@ -92,7 +91,8 @@ cmake .. \
 	-DENABLE_FAST_MATH=ON 
 ```
 ```
-make -j7
+make -j$(nproc)
+sudo make install 
 ```
 ## release
 ```
