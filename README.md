@@ -65,7 +65,7 @@ mkdir -p opencv-4.11.0/build_debug opencv-4.11.0/build_release
 cd opencv-4.11.0/build_debug
 cmake .. \
 	-DCMAKE_BUILD_TYPE=Debug \
-	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.10.0/modules \
+	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
 	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv_debug/ \
 	-DBUILD_opencv_java_bindings_generator=OFF \
 	-DBUILD_JAVA=OFF \
@@ -92,7 +92,7 @@ cmake .. \
 cd ../build_ralease
  cmake .. \
 	-DCMAKE_BUILD_TYPE=Release \
-	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.10.0/modules \
+	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
 	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv_release/ \
 	-DBUILD_opencv_java_bindings_generator=OFF \
 	-DBUILD_JAVA=OFF \
