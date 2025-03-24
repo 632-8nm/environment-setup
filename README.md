@@ -4,7 +4,7 @@
 sudo apt update
 sudo apt install cmake -y
 ```
-# 下载opencv 
+## 下载opencv 
 ```
 mkdir -p opencv
 cd opencv
@@ -18,7 +18,7 @@ tar -zxf opencv-4.11.0.tar.gz
 tar -zxf opencv_contrib-4.11.0.tar.gz
 ```
 
-# 安装cuda cudnn
+## 安装cuda cudnn
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
 sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -35,7 +35,7 @@ sudo cp /var/cudnn-local-repo-ubuntu2404-9.8.0/cudnn-*-keyring.gpg /usr/share/ke
 sudo apt-get update
 sudo apt-get -y install cudnn-cuda-12
 ```
-## 添加环境变量
+### 添加环境变量
 ```
 sudo nano ~/.bashrc
 ```
@@ -49,8 +49,8 @@ export LD_LIBRARY_PATH="/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH"
 source ~/.bashrc
 ```
 
-# 构建opencv
-## debug版本
+## 构建opencv
+### debug版本
 ```
 mkdir -p opencv-4.11.0/build_debug opencv-4.11.0/build_release
 cd opencv-4.11.0/build_debug
@@ -84,7 +84,7 @@ cmake .. \
 ninja
 sudo ninja install
 ```
-## release版本
+### release版本
 ```
 cd ../build_ralease
 cmake .. \
@@ -115,7 +115,7 @@ cmake .. \
 ninja
 sudo ninja install
 ```
-# 验证 Debug/Release
+## 验证 Debug/Release
 ```
 file /usr/local/opencv_debug/lib/libopencv_core.so.4.11.0
 file /usr/local/opencv_release/lib/libopencv_core.so.4.11.0
