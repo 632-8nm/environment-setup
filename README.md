@@ -1,4 +1,5 @@
-# 安装cmake
+# WSL2 Ubuntu-24.04 OpenCV CUDA 环境配置
+## 安装cmake
 ```
 sudo apt update
 sudo apt install cmake -y
