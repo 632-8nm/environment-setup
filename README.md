@@ -1,6 +1,7 @@
 # cmake
 ```
-sudo apt update && sudo apt install cmake
+sudo apt update
+sudo apt install cmake -y
 ```
 # opencv 
 ```
