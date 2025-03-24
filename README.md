@@ -20,11 +20,7 @@ tar -zxf opencv_contrib-4.11.0.tar.gz
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
 sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
-if [ ! -f "cuda-repo-wsl-ubuntu-12-8-local_12.8.1-1_amd64.deb" ]; then
-    wget https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda-repo-wsl-ubuntu-12-8-local_12.8.1-1_amd64.deb
-else
-    echo "文件已存在，跳过下载。"
-fi
+wget https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda-repo-wsl-ubuntu-12-8-local_12.8.1-1_amd64.deb
 sudo dpkg -i cuda-repo-wsl-ubuntu-12-8-local_12.8.1-1_amd64.deb
 sudo cp /var/cuda-repo-wsl-ubuntu-12-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
@@ -32,16 +28,13 @@ sudo apt-get -y install cuda-toolkit-12-8
 ```
 # cudnn
 ```
-if [ ! -f "cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb" ]; then
-    wget https://developer.download.nvidia.com/compute/cudnn/9.8.0/local_installers/cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb
-else
-    echo "文件已存在，跳过下载。"
-fi
+wget https://developer.download.nvidia.com/compute/cudnn/9.8.0/local_installers/cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb
 sudo dpkg -i cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb
 sudo cp /var/cudnn-local-repo-ubuntu2404-9.8.0/cudnn-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
 sudo apt-get -y install cudnn-cuda-12
 ```
+## 添加环境变量
 ```
 sudo nano ~/.bashrc
 ```
