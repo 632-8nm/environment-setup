@@ -120,4 +120,9 @@ cd ../build_ralease
 	-DWITH_GTK_2_X=ON \
 	-DENABLE_FAST_MATH=ON 
 ```
+# 验证
+```
+file /usr/local/opencv_debug/lib/libopencv_core.so.4.10.0
+file /usr/local/opencv_release/lib/libopencv_core.so.4.10.0
+```
 
