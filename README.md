@@ -89,6 +89,7 @@ cmake .. \
 
 ## release
 ```
+cd ../build_ralease
  cmake .. \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.10.0/modules \
