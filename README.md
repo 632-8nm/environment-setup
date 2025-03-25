@@ -36,7 +36,7 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei -y
 ## 安装依赖
 ```sh
 sudo apt update
-sudo apt install cmake g++ ninja-build libgtk2.0-dev pkg-config tree -y
+sudo apt install cmake g++ ninja-build libgtk-3-dev pkg-config tree clangd -y
 ```
 ## 下载opencv 
 ```sh
@@ -101,23 +101,17 @@ cmake .. \
 	-DCMAKE_BUILD_TYPE=Debug \
 	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
 	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv_debug/ \
-	-DBUILD_opencv_java_bindings_generator=OFF \
-	-DBUILD_JAVA=OFF \
-	-DBUILD_opencv_python_bindings_generator=OFF \
-	-DBUILD_opencv_python_tests=OFF \
-	-DBUILD_PERF_TESTS=OFF \
-	-DBUILD_TESTS=OFF \
-	-DOPENCV_TEST_DNN_TFLITE=OFF \
+	-DBUILD_opencv_java_bindings_generator=OFF -DBUILD_JAVA=OFF \
+	-DBUILD_opencv_python_bindings_generator=OFF -DBUILD_opencv_python_tests=OFF \
+	-DBUILD_PERF_TESTS=OFF -DBUILD_TESTS=OFF -DOPENCV_TEST_DNN_TFLITE=OFF \
 	-DBUILD_opencv_face=OFF \
 	-DBUILD_opencv_wechat_qrcode=OFF \
 	-DBUILD_opencv_features2d=OFF \
 	-DBUILD_opencv_xfeatures2d=OFF \
 	-DBUILD_opencv_cudafeatures2d=OFF \
-	-DBUILD_CUDA_STUBS=ON \
-	-DOPENCV_DNN_CUDA=ON \
-	-DWITH_CUDA=ON \
+	-DBUILD_CUDA_STUBS=ON -DOPENCV_DNN_CUDA=ON -DWITH_CUDA=ON \
 	-DOPENCV_ENABLE_NONFREE=ON \
-	-DWITH_GTK_2_X=ON \
+	-DWITH_GTK=ON -DWITH_GTK2=OFF -DWITH_GTK3=ON \
 	-DENABLE_FAST_MATH=ON 
 ```
 ```sh
@@ -126,29 +120,22 @@ sudo ninja install
 ```
 ### release版本
 ```sh
-cd ../build_release
 cmake .. \
 	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
 	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv_release/ \
-	-DBUILD_opencv_java_bindings_generator=OFF \
-	-DBUILD_JAVA=OFF \
-	-DBUILD_opencv_python_bindings_generator=OFF \
-	-DBUILD_opencv_python_tests=OFF \
-	-DBUILD_PERF_TESTS=OFF \
-	-DBUILD_TESTS=OFF \
-	-DOPENCV_TEST_DNN_TFLITE=OFF \
+	-DBUILD_opencv_java_bindings_generator=OFF -DBUILD_JAVA=OFF \
+	-DBUILD_opencv_python_bindings_generator=OFF -DBUILD_opencv_python_tests=OFF \
+	-DBUILD_PERF_TESTS=OFF -DBUILD_TESTS=OFF -DOPENCV_TEST_DNN_TFLITE=OFF \
 	-DBUILD_opencv_face=OFF \
 	-DBUILD_opencv_wechat_qrcode=OFF \
 	-DBUILD_opencv_features2d=OFF \
 	-DBUILD_opencv_xfeatures2d=OFF \
 	-DBUILD_opencv_cudafeatures2d=OFF \
-	-DBUILD_CUDA_STUBS=ON \
-	-DOPENCV_DNN_CUDA=ON \
-	-DWITH_CUDA=ON \
+	-DBUILD_CUDA_STUBS=ON -DOPENCV_DNN_CUDA=ON -DWITH_CUDA=ON \
 	-DOPENCV_ENABLE_NONFREE=ON \
-	-DWITH_GTK_2_X=ON \
+	-DWITH_GTK=ON -DWITH_GTK2=OFF -DWITH_GTK3=ON \
 	-DENABLE_FAST_MATH=ON 
 ```
 ```sh
