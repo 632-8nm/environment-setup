@@ -33,10 +33,10 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei -y
 
 重启
 
-## 安装cmake
+## 安装依赖
 ```sh
 sudo apt update
-sudo apt install cmake g++ ninja-build -y
+sudo apt install cmake g++ ninja-build libgtk2.0-dev pkg-config tree -y
 ```
 ## 下载opencv 
 ```sh
@@ -165,7 +165,7 @@ file /usr/local/opencv_release/lib/libopencv_core.so.4.11.0
 ## XServer
 
 ```sh
-echo 'export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0' >> ~/.bashrc
+echo "export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0" >> ~/.bashrc
 source ~/.bashrc
 ```
 
