@@ -2,13 +2,13 @@
 
 ## 换源
 
-```
+```sh
 cd /etc/apt/sources.list.d/
 sudo cp ubuntu.sources ubuntu.sources.bak
 sudo vi ubuntu.sources
 ```
 
-```
+```sh
 Types: deb
 URIs: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
 Suites: noble noble-security noble-updates noble-proposed noble-backports
@@ -16,14 +16,14 @@ Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```
 
-```
+```sh
 sudo apt update
 sudo apt upgrade -y
 ```
 
 ## 设置中文
 
-```
+```sh
 sudo apt update
 sudo apt install language-pack-zh-hans locales -y
 sudo update-locale LANG=zh_CN.UTF-8
@@ -34,26 +34,26 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei -y
 重启
 
 ## 安装cmake
-```
+```sh
 sudo apt update
-sudo apt install cmake g++ -y
+sudo apt install cmake g++ ninja-build -y
 ```
 ## 下载opencv 
-```
+```sh
 mkdir -p opencv
 cd opencv
 ```
-```
+```sh
 wget -O opencv-4.11.0.tar.gz https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
 wget -O opencv_contrib-4.11.0.tar.gz https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz
 ```
-```
+```sh
 tar -zxf opencv-4.11.0.tar.gz
 tar -zxf opencv_contrib-4.11.0.tar.gz
 ```
 
 ## 安装cuda cudnn
-```
+```sh
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
 sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
 wget https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda-repo-wsl-ubuntu-12-8-local_12.8.1-1_amd64.deb
@@ -62,7 +62,7 @@ sudo cp /var/cuda-repo-wsl-ubuntu-12-8-local/cuda-*-keyring.gpg /usr/share/keyri
 sudo apt-get update
 sudo apt-get -y install cuda-toolkit-12-8
 ```
-```
+```sh
 wget https://developer.download.nvidia.com/compute/cudnn/9.8.0/local_installers/cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb
 sudo dpkg -i cudnn-local-repo-ubuntu2404-9.8.0_1.0-1_amd64.deb
 sudo cp /var/cudnn-local-repo-ubuntu2404-9.8.0/cudnn-*-keyring.gpg /usr/share/keyrings/
@@ -70,32 +70,32 @@ sudo apt-get update
 sudo apt-get -y install cudnn-cuda-12
 ```
 ### 添加环境变量
-```
+```sh
 sudo nano ~/.bashrc
 ```
-```
+```sh
 export CUDA_HOME="/usr/local/cuda-12.8"
 export CuDNN_HOME="/usr/local/cuda-12.8/include"
 export PATH="/usr/local/cuda-12.8/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH"
 ```
-```
+```sh
 source ~/.bashrc
 ```
 
 ### 验证安装
 
-```
+```sh
 nvcc -V
 ```
 
 ## 构建opencv
 ### debug版本
-```
+```sh
 mkdir -p opencv-4.11.0/build_debug opencv-4.11.0/build_release
 cd opencv-4.11.0/build_debug
 ```
-```
+```sh
 cmake .. \
 	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Debug \
@@ -120,13 +120,13 @@ cmake .. \
 	-DWITH_GTK_2_X=ON \
 	-DENABLE_FAST_MATH=ON 
 ```
-```
+```sh
 ninja
 sudo ninja install
 ```
 ### release版本
-```
-cd ../build_ralease
+```sh
+cd ../build_release
 cmake .. \
 	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Release \
@@ -151,13 +151,31 @@ cmake .. \
 	-DWITH_GTK_2_X=ON \
 	-DENABLE_FAST_MATH=ON 
 ```
-```
+```sh
 ninja
 sudo ninja install
 ```
 ## 验证 Debug/Release
-```
+
+```sh
 file /usr/local/opencv_debug/lib/libopencv_core.so.4.11.0
 file /usr/local/opencv_release/lib/libopencv_core.so.4.11.0
 ```
+
+## XServer
+
+```sh
+echo 'export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0' >> ~/.bashrc
+source ~/.bashrc
+```
+
+## 安装QT
+
+```sh
+wget https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-online-installer-linux-x64-4.9.0.run
+chmod +x qt-online-installer-linux-x64-4.9.0.run
+./qt-online-installer-linux-x64-4.9.0.run
+```
+
+
 
