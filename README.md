@@ -83,6 +83,12 @@ export LD_LIBRARY_PATH="/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH"
 source ~/.bashrc
 ```
 
+### 验证安装
+
+```
+nvcc -V
+```
+
 ## 构建opencv
 ### debug版本
 ```
