@@ -1,4 +1,38 @@
 # Ubuntu-24.04 OpenCV CUDA 环境配置
+
+## 换源
+
+```
+cd /etc/apt/sources.list.d/
+sudo cp ubuntu.sources ubuntu.sources.bak
+sudo vi ubuntu.sources
+```
+
+```
+Types: deb
+URIs: http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+Suites: noble noble-security noble-updates noble-proposed noble-backports
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+```
+
+```
+sudo apt update
+sudo apt upgrade -y
+```
+
+## 设置中文
+
+```
+sudo apt update
+sudo apt install language-pack-zh-hans locales -y
+sudo update-locale LANG=zh_CN.UTF-8
+echo "LANG=zh_CN.UTF-8" | sudo tee -a /etc/environment
+sudo apt install fonts-wqy-microhei fonts-wqy-zenhei -y
+```
+
+重启
+
 ## 安装cmake
 ```
 sudo apt update
