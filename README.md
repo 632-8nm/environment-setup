@@ -36,7 +36,7 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei -y
 ## 安装cmake
 ```
 sudo apt update
-sudo apt install cmake -y
+sudo apt install cmake g++ -y
 ```
 ## 下载opencv 
 ```
