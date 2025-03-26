@@ -36,7 +36,7 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei -y
 ## 安装依赖
 ```sh
 sudo apt update
-sudo apt install cmake g++ ninja-build libgtk-3-dev pkg-config tree clangd -y
+sudo apt install cmake g++ ninja-build libgtk2.0-dev pkg-config libgtk-3-dev pkg-config tree clangd -y
 ```
 ## 下载opencv 
 ```sh
