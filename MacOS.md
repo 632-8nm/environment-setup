@@ -44,3 +44,8 @@ ninja
 mkdir -p /usr/local/opencv_release
 sudo ninja install
 ```
+## 验证
+```
+ls -lh /usr/local/opencv_debug/lib/libopencv_core.4.11.0.dylib
+ls -lh /usr/local/opencv_release/lib/libopencv_core.4.11.0.dylib
+```
