@@ -5,6 +5,7 @@ tar -zxf opencv-4.11.0.tar.gz
 tar -zxf opencv_contrib-4.11.0.tar.gz
 ```
 ```
+mkdir -p opencv-4.11.0/build_debug
 cd opencv-4.11.0/build_debug
 cmake .. \
     -G "Ninja" \
@@ -21,6 +22,7 @@ ninja
 mkdir -p /usr/local/opencv_debug && sudo ninja install
 ```
 ```
+mkdir -p opencv-4.11.0/build_release
 cd opencv-4.11.0/build_release
 cmake .. \
     -G "Ninja" \
