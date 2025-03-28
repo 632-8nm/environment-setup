@@ -1,7 +1,8 @@
 ```
 curl -L -o opencv-4.11.0.tar.gz https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
 curl -L -o opencv_contrib-4.11.0.tar.gz https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz
-tar -zxf opencv-4.11.0.tar.gz opencv_contrib-4.11.0.tar.gz
+tar -zxf opencv-4.11.0.tar.gz
+tar -zxf opencv_contrib-4.11.0.tar.gz
 ```
 ```
 cd opencv-4.11.0/build_debug
