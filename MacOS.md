@@ -19,7 +19,8 @@ cmake .. \
     -DOPENCV_DNN_OPENCL=ON \
     -DENABLE_NEON=ON -DCPU_BASELINE=NEON -DCPU_DISPATCH=NEON_FP16 \
 ninja
-mkdir -p /usr/local/opencv_debug && sudo ninja install
+mkdir -p /usr/local/opencv_debug
+sudo ninja install
 ```
 ```
 mkdir -p opencv-4.11.0/build_release
@@ -36,5 +37,6 @@ cmake .. \
     -DOPENCV_DNN_OPENCL=ON \
     -DENABLE_NEON=ON -DCPU_BASELINE=NEON -DCPU_DISPATCH=NEON_FP16 \
 ninja
-mkdir -p /usr/local/opencv_release && sudo ninja install
+mkdir -p /usr/local/opencv_release
+sudo ninja install
 ```
