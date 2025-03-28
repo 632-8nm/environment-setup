@@ -1,9 +1,12 @@
+# MacOS上的安装教程
+## 下载解压opencv源码
 ```
 curl -L -o opencv-4.11.0.tar.gz https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
 curl -L -o opencv_contrib-4.11.0.tar.gz https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz
 tar -zxf opencv-4.11.0.tar.gz
 tar -zxf opencv_contrib-4.11.0.tar.gz
 ```
+## 生成Debug版本
 ```
 mkdir -p opencv-4.11.0/build_debug
 cd opencv-4.11.0/build_debug
@@ -22,6 +25,7 @@ ninja
 mkdir -p /usr/local/opencv_debug
 sudo ninja install
 ```
+## 生成Release版本
 ```
 mkdir -p opencv-4.11.0/build_release
 cd opencv-4.11.0/build_release
