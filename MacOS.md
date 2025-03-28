@@ -12,8 +12,9 @@ cmake .. \
     -DOPENCV_DNN_OPENCL=ON \
     -DENABLE_NEON=ON -DCPU_BASELINE=NEON -DCPU_DISPATCH=NEON_FP16 \
 ninja
-sudo ninja install
-
+mkdir -p /usr/local/opencv_debug && sudo ninja install
+```
+```
 cmake .. \
     -G "Ninja" \
     -DCMAKE_BUILD_TYPE=Release \
