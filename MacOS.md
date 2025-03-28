@@ -1,5 +1,10 @@
 ```
-
+wget -O opencv-4.11.0.tar.gz https://github.com/opencv/opencv/archive/refs/tags/4.11.0.tar.gz
+wget -O opencv_contrib-4.11.0.tar.gz https://github.com/opencv/opencv_contrib/archive/refs/tags/4.11.0.tar.gz
+tar -zxf opencv-4.11.0.tar.gz opencv_contrib-4.11.0.tar.gz
+```
+```
+cd opencv-4.11.0/build_debug
 cmake .. \
     -G "Ninja" \
     -DCMAKE_BUILD_TYPE=Debug \
@@ -15,6 +20,7 @@ ninja
 mkdir -p /usr/local/opencv_debug && sudo ninja install
 ```
 ```
+cd opencv-4.11.0/build_release
 cmake .. \
     -G "Ninja" \
     -DCMAKE_BUILD_TYPE=Release \
