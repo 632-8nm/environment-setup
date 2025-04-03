@@ -90,11 +90,13 @@ nvcc -V
 ```
 
 ## 构建opencv
-### debug版本
+
 ```sh
-mkdir -p opencv-4.11.0/build_debug opencv-4.11.0/build_release
-cd opencv-4.11.0/build_debug
+mkdir -p opencv-4.11.0/build
+sudo /usr/local/opencv/Release/ /usr/local/opencv/Debug/ 
+cd opencv-4.11.0/build
 ```
+### debug版本
 ```sh
 cmake .. \
 	-G "Ninja" \
@@ -120,6 +122,7 @@ sudo ninja install
 ```
 ### release版本
 ```sh
+rm -rf *
 cmake .. \
 	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Release \
@@ -145,8 +148,8 @@ sudo ninja install
 ## 验证 Debug/Release
 
 ```sh
-file /usr/local/opencv_debug/lib/libopencv_core.so.4.11.0
-file /usr/local/opencv_release/lib/libopencv_core.so.4.11.0
+file /usr/local/opencv/Debug/lib/libopencv_core.so.4.11.0
+file /usr/local/opencv/Release/lib/libopencv_core.so.4.11.0
 ```
 
 ## XServer
