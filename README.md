@@ -22,8 +22,11 @@ sudo apt upgrade -y
 ```
 ## 安装zsh
 ```sh
-sudo apt update && sudo apt install zsh -y \
-chsh -s $(which zsh) \
+sudo apt update
+sudo apt install zsh -y
+chsh -s $(which zsh) 
+```
+```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
