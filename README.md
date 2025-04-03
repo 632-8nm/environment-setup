@@ -36,9 +36,10 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei -y
 ## 安装依赖
 ```sh
 sudo apt update
-sudo apt install cmake g++ ninja-build libgtk2.0-dev pkg-config libgtk-3-dev pkg-config tree clangd nfs-kernel-server -y
+sudo apt install cmake gcc g++ ninja-build libgtk2.0-dev pkg-config libgtk-3-dev pkg-config tree clangd nfs-kernel-server -y
 ```
-## 下载opencv 
+## 配置opencv with cuda 
+### 下载opencv
 ```sh
 mkdir -p opencv
 cd opencv
@@ -52,7 +53,7 @@ tar -zxf opencv-4.11.0.tar.gz
 tar -zxf opencv_contrib-4.11.0.tar.gz
 ```
 
-## 安装cuda cudnn
+### 安装cuda cudnn
 ```sh
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
 sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -89,7 +90,7 @@ source ~/.bashrc
 nvcc -V
 ```
 
-## 构建opencv
+### 构建opencv
 
 ```sh
 mkdir -p opencv-4.11.0/build
@@ -145,7 +146,7 @@ cmake .. \
 ninja
 sudo ninja install
 ```
-## 验证 Debug/Release
+### 验证 Debug/Release
 
 ```sh
 file /usr/local/opencv/Debug/lib/libopencv_core.so.4.11.0
