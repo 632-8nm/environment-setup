@@ -100,7 +100,7 @@ cmake .. \
 	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Debug \
 	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
-	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv_debug/ \
+	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv/Debug/ \
 	-DBUILD_opencv_java_bindings_generator=OFF -DBUILD_JAVA=OFF \
 	-DBUILD_opencv_python_bindings_generator=OFF -DBUILD_opencv_python_tests=OFF \
 	-DBUILD_PERF_TESTS=OFF -DBUILD_TESTS=OFF -DOPENCV_TEST_DNN_TFLITE=OFF \
@@ -124,7 +124,7 @@ cmake .. \
 	-G "Ninja" \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-4.11.0/modules \
-	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv_release/ \
+	-DCMAKE_INSTALL_PREFIX=/usr/local/opencv/Release/ \
 	-DBUILD_opencv_java_bindings_generator=OFF -DBUILD_JAVA=OFF \
 	-DBUILD_opencv_python_bindings_generator=OFF -DBUILD_opencv_python_tests=OFF \
 	-DBUILD_PERF_TESTS=OFF -DBUILD_TESTS=OFF -DOPENCV_TEST_DNN_TFLITE=OFF \
