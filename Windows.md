@@ -1,4 +1,4 @@
-'''cmd
+```cmd
 cmake .. -G "Visual Studio 17 2022" ^
 -DOPENCV_DNN_CUDA:BOOL="1" ^
 -DCUDA_FAST_MATH:BOOL="1" ^
@@ -15,4 +15,4 @@ cmake .. -G "Visual Studio 17 2022" ^
 -DENABLE_FAST_MATH:BOOL="1" ^
 -DBUILD_opencv_python_tests:BOOL="0" ^
 -DOPENCV_TEST_DNN_TFLITE:BOOL="0"
-'''
+```
