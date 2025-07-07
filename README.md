@@ -180,6 +180,10 @@ source ~/.bashrc
 ```sh
 wget https://d13lb3tujbc8s0.cloudfront.net/onlineinstallers/qt-online-installer-linux-x64-4.9.0.run
 chmod +x qt-online-installer-linux-x64-4.9.0.run
+```
+```
+./qt-online-installer-linux-x64-4.9.0.run
+```
 
 # MacOS上的安装教程
 ## 下载解压opencv源码
@@ -233,8 +237,6 @@ ls -lh /usr/local/opencv_debug/lib/libopencv_core.4.11.0.dylib
 ls -lh /usr/local/opencv_release/lib/libopencv_core.4.11.0.dylib
 ```
 
-./qt-online-installer-linux-x64-4.9.0.run
-```
 # Windows
 ```cmd
 cmake .. -G "Visual Studio 17 2022" ^
