@@ -1,3 +1,5 @@
+# IBus Pinyin
+```shell
 #!/usr/bin/bash
 # 1. 更新软件包列表
 sudo apt update
@@ -25,3 +27,5 @@ ibus-daemon -drx
 # 7. 提示完成
 echo "✅ IBus 拼音输入法已安装并配置完成！"
 echo "📌 请注销或重启登录，然后使用 Win + Space 切换中文输入。"
+```
+
